@@ -8,13 +8,19 @@
     "grunt-contrib-uglify": "~0.5.0",
     "qunitjs": "^2.3.2"
   },
+  "dependencies" : {
+    "postinstall-build": "^2.0.0",
+    "d3" : "^3.0.0"
+  },
   "description": "WebGLayer",
   "main": "src/WGL.js",
   "directories": {
     "example": "examples"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build" : "grunt",
+    "postinstall": "postinstall-build \"npm run build\""
   },
   "repository": {
     "type": "git",
