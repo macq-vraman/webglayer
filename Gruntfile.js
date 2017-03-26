@@ -36,6 +36,17 @@ module.exports = function(grunt) {
     	    },
     qunit: {
         all: ['test/**/*.html']
+    },
+    umd : {
+        all : {
+            options : {
+                src : 'build/main.js',
+                objectToExport : 'WGL',
+                deps : {
+                    'default' : ['d3', {jQuery : '$'}]
+                }
+            }
+        }
       }
   });
 
@@ -44,7 +55,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-jsdoc');
+  grunt.loadNpmTasks('grunt-umd');
   // Default task(s).
-  grunt.registerTask('default', ['concat', 'uglify']);
+  grunt.registerTask('default', ['concat','umd','uglify']);
 
 };
