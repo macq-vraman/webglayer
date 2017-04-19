@@ -17,19 +17,22 @@ WGL.internal.Manager = function(mapid, mapcontainer) {
 	
 	this.updateMapSize = function(){
 		this.mapdiv = document.getElementById(mapid);
-		var body = document.getElementsByTagName('body')[0];		
-		
-		var mapparentdiv = document.getElementById(mapid).parentElement;		
-		this.b = body.offsetHeight - (this.mapdiv.offsetTop +this.mapdiv.offsetHeight); /* lower (bottom)left corner for webgl*/
-		this.l = this.mapdiv.offsetLeft; /* lower left corner for webgl*/	
-		this.w = this.mapdiv.offsetWidth;
-		this.h = this.mapdiv.offsetHeight;
+        var $mapdiv = $(this.mapdiv);
+        var offset = $mapdiv.offset();
 
+        var body = document.getElementsByTagName('body')[0];
+        var $body = $(body);
 
-		
-		this.body_width  = body.offsetWidth;
-		this.body_height = body.offsetHeight;
+        var mapparentdiv = document.getElementById(mapid).parentElement;
 
+        this.l = offset.left; /* lower left corner for webgl*/
+        this.w = $mapdiv.outerWidth();
+        this.h = $mapdiv.outerHeight();
+
+        this.body_width  = $body.outerWidth(true);
+        this.body_height = $body.outerHeight(true);
+
+        this.b = this.body_height - (offset.top + this.h); /* lower (bottom)left corner for webgl*/
 		
 		var z = this.mapdiv.style.zIndex;
 	
