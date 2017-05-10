@@ -13,7 +13,8 @@
   "dependencies" : {
     "postinstall-build": "~3.0.0",
     "d3" : "^3.0.0",
-    "jquery" : "^3.0.0"
+    "jquery" : "^3.0.0",
+    "tooltipster" : "~4.2.3"
   },
   "description": "WebGLayer",
   "main": "build/main.js",

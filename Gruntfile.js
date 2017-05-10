@@ -43,8 +43,8 @@ module.exports = function(grunt) {
                 src : 'build/main.js',
                 objectToExport : 'WGL',
                 deps : {
-                    'default' : ['d3', {jquery : '$'}],
-		    'global' : ['d3', {jQuery : '$'}]
+                    'default' : ['d3', {jquery : '$'}, 'tooltipster'],
+                    'global' : ['d3', {jQuery : '$'}, 'tooltipster']
                 }
             }
         }
