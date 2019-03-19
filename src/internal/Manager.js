@@ -1,4 +1,3 @@
-
 /**
  * Stores and manage common objects for WebGL such as data buffers, common uniforms and matrixes
  */
@@ -39,7 +38,7 @@ WGL.internal.Manager = function(mapid, small_canvas, mapcontainer) {
       this.canvas.setAttribute('id', canvasid);
       this.canvas.setAttribute("width", this.body_width);
       this.canvas.setAttribute("height", this.body_height);
-      this.canvas.setAttribute("style", "position:fixed ; " +
+      this.canvas.setAttribute("style", "position:absolute ; " +
         "top:" + 0 + "px ; " +
         "left:" + 0 + "px; " +
         "pointer-events: none;" +
@@ -58,7 +57,7 @@ WGL.internal.Manager = function(mapid, small_canvas, mapcontainer) {
       this.canvas.setAttribute("width", this.w);
       this.canvas.setAttribute("height", this.h);
 
-      this.canvas.setAttribute("style", "position:fixed ; " +
+      this.canvas.setAttribute("style", "position:absolute ; " +
         "top:" + this.mapdiv.offsetTop + "px ; " +
         "left:" + this.mapdiv.offsetLeft + "px; " +
         "pointer-events: none;" +
